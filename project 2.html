@@ -1,0 +1,77 @@
+<!Doctype Html>
+<html>
+  <head>
+    <title>Dinner Time</title>
+    <script type= "text/javascript">
+    var score = 0;
+    var hasVisitedNorth = false;  
+    var hasVisitedEast = false;
+    var hasVisitedWest = false;
+    var hasVisitedSouth = false;
+     function north(){
+      var north = "You can see the enterance to the park ";    
+      alert (north);
+       if(!hasVisitedNorth) {
+         score = score + 5;
+         (hasVisitedNorth) = true;
+      }
+    } 
+    function east(){
+      var east = "You can see the swing set that you were playing on earlier that day";
+      alert (east);
+      if(!hasVisitedEast) {
+         score = score + 5;
+         (hasVisitedEast) = true;
+      }   
+    }  
+    function west(){
+      var west = "you can see a small pond that is located in the park";
+      alert (west);
+     if(!hasVisitedWest) {
+         score = score + 5;
+         (hasVisitedWest) = true;
+      }
+    }   
+    function south(){
+      var south = "There is a giant tree that has a tire hanging from it"; 
+      alert (south);
+       if(!hasVisitedSouth) {
+         score = score + 5;
+         (hasVisitedSouth) = true;
+      }
+    }
+    function givescore(){
+      alert (score);
+    }
+      </script>
+      
+    </head>
+  <body>
+    <h1> Dinner Time</h1>
+    <textarea rows="9" cols="50" >You are at the park and it is almost time for dinner. However it is starting to get dark and you do not know how to get back home. If you do not make it home in time for dinner your mother will kill you. Good Luck! </textarea>
+    
+   
+    <br>
+    <input type = "button"
+            value = "north"
+            onclick = "north();"> 
+        
+    <input type = "button"
+            value = "east"
+            onclick = "east();">
+            
+    <input type = "button"
+            value = "west"
+            onclick = "west();">
+    
+    <input type = "button"
+            value = "south"
+            onclick = "south();"> 
+            
+     <input type = "button"
+            value = "score"
+            onclick = "givescore();">      
+    <br>
+     <a href=mailto:timothy.doherty1@marist.edu> contact me </a>
+  </body> 
+</html>  
