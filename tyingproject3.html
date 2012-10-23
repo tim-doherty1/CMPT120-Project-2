@@ -1,0 +1,203 @@
+<!DOCTYPE HTML>
+<html>
+<!-- Tim Doherty -->
+     
+  <head>
+    <title> Dinner Time </title>
+    <script>
+      var currentLocation = "giantSlide";
+      var score = 0;
+      var hasVisitedNorth = false;  
+      var hasVisitedEast = false;
+      var hasVisitedWest = false;
+      var hasVisitedSouth = false;
+    	
+      
+      function btn_score_click() {
+        msg="Your score is "+score+".";
+        updateDisplay(msg);
+      }
+      
+      function btn_click_north() {
+        if(currentLocation==="group"){
+          currentLocation="entrance";
+          location_3();
+        }
+        else if(currentLocation==="entrance"){
+          currentLocation="giantSlide";
+          location_0();
+        }
+        else if(currentLocation==="giantSlide"){
+          currentLocation="giantTree";
+          location_1();
+        }
+        else if((currentLocation==="giantTree")||(currentLocation==="pond")||(currentLocation==="swings")){
+          msg="You cannot go North.";
+          updateDisplay(msg);
+        }
+         if(!hasVisitedNorth) {
+         	score = score + 5;
+         	(hasVisitedNorth) = true;
+        }        
+      } 
+      
+      function btn_click_east() {
+        if(currentLocation==="pond"){
+          currentLocation="giantSlide";
+          location_0();
+        }
+        else if(currentLocation==="giantSlide"){
+          currentLocation="swings";
+          location_2();
+        }
+        else if((currentLocation==="giantTree")||(currentLocation==="group")||(currentLocation==="entrance")|| (currentLocation ==="swings")){
+          msg="You cannot go East.";
+          updateDisplay(msg);
+        }
+        if(!hasVisitedEast) {
+         	score = score + 5;
+         	(hasVisitedEast) = true;
+        }        
+      }
+      
+      function btn_click_west() {
+        if(currentLocation==="swings"){
+          currentLocation="giantSlide";
+          location_0();
+        }
+        else if(currentLocation==="giantSlide"){
+          currentLocation="pond";
+          location_4();
+        }
+        else if(currentLocation==="inSwamp"){
+          currentLocation="giantSlide";
+          location_4();
+        } 
+        else if((currentLocation==="giantTree")||(currentLocation==="pond")||(currentLocation==="entrance")||(currentLocation=== "group")){
+          msg="You cannot go West.";
+          updateDisplay(msg);
+        }
+         if(!hasVisitedWest) {
+         	score = score + 5;
+         	(hasVisitedWest) = true;
+        }        
+      } 
+      
+      function btn_click_south() {
+        if(currentLocation==="giantTree"){
+          currentLocation="giantSlide";
+          location_0();
+        }
+        else if(currentLocation==="giantSlide"){
+          currentLocation="entrance";
+          location_3();
+        }
+        else if(currentLocation==="entrance"){
+          currentLocation="group";
+          location_5();
+        }
+        else if((currentLocation==="group")||(currentLocation==="pond")||(currentLocation==="swings")){
+          msg="You cannot go South.";
+          updateDisplay(msg);
+        }
+         if(!hasVisitedSouth) {
+         	score = score + 5;
+         	(hasVisitedSouth) = true;
+        }
+      }
+	function location_0(){
+        var msg="You are in the center of the park standing next to a giant slide.";
+        updateDisplay(msg);
+      }
+      
+    function location_1(){
+        var msg = "You are now standing in front of a giant tree. There is a tire swing hanging from the tree and you can also see a large bee hive.";
+        updateDisplay(msg);
+      }
+      
+	function location_2(){
+        var msg = "You are now standing by the swings. There are many kids playing on them.";
+        updateDisplay(msg);
+      }
+      
+    function location_3(){
+        var msg = "You are now at the entrance to the park. In front of you there is a large group of people that you can see.";
+        updateDisplay(msg);
+      }
+      
+    function location_4(){
+        var msg = "You are now standing ankle deep in a pond. I suggest that you get out before you ruin your shoes";
+        updateDisplay(msg);
+      }
+      
+    function location_5(){
+        var msg = "You are now standing with in the group of people and you see your neighbor Billy.";
+        updateDisplay(msg);          
+      }
+    function updateDisplay(msg) {
+        var ta=document.getElementById("tagame");
+        ta.value="\n" + msg + "\n" + ta.value + "\n" ;
+      }
+    function btn_go_click() {
+        var text=document.getElementById("text_command");
+        if((text.value==="n")||(text.value==="N")){
+          btn_click_north();
+        }
+        else if((text.value==="s")||(text.value==="S")){
+          btn_click_south();
+        }
+        else if((text.value==="e")||(text.value==="E")){
+          btn_click_east();
+        }
+        else if((text.value==="w")||(text.value==="W")){
+          btn_click_west();
+        }
+        else {
+           msg="You cant enter that punk! You may only enter n, s, e, w, N, S, E, W. Otherwise press the buttons";
+          updateDisplay(msg);      
+        }
+      }
+      
+      </script>
+  </head>
+  
+  <body>
+    <h1>Dinner Time</h1>
+    <textarea rows="9" cols="50" id="tagame" >You are at the park and it is almost time for dinner. However it is starting to get dark and you do not know how to get back home. If you do not make it home in time for dinner your mother will kill you. Good Luck! </textarea>
+    <br>
+    
+      
+      <input type="button"
+             value= "north"
+             onclick="btn_click_north();"> 
+                    
+      <input type="button"
+             value= "east"
+             onclick="btn_click_east();"> 
+                     
+      <input type="button"
+             value= "west"
+             onclick="btn_click_west();">  
+               
+      <input type="button"
+             value= "south"
+             onclick="btn_click_south();">  
+               
+      <input type="text"
+             id="text_command"> 
+             
+      <input type="button"
+             value="Enter"
+             onclick="btn_go_click();"> 
+      <br>       
+      <input type="button"
+             value= "score"
+             onclick="btn_score_click();">
+            
+    
+    <p>
+      <a href="mailto:timothy.doherty1@marist.edu">contact me</a>
+    </p>
+   
+  </body>
+</html>    
