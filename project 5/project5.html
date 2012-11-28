@@ -1,0 +1,65 @@
+!DOCTYPE HTML>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="styles.css" /> 
+		<title>Dinner Time</title>
+	</head>
+
+	<body onload="btn_move_click(1)">   <!--room4 is my "init" function for first text in the text area -->
+
+
+		<h1 class="text">Dinner Time</h1>
+		 <script type="text/javascript" src="locations.js"></script>
+
+		
+
+		<br>
+		<br>
+
+		<textarea rows="15" cols="100" id="textarea1">
+
+		</textarea>
+
+
+		<br>
+
+		<input type="button"
+				value="Go North"
+				onclick="btn_move_click(0);"
+				id="idNorth">
+		<input type="button"
+				value="Go East"
+				onclick="btn_move_click(1);"
+				id="idEast">	
+		<input type="button"
+				value="Go South"
+				onclick="btn_move_click(2);"
+				id="idSouth">
+		<input type="button"
+				value="Go West"
+				onclick="btn_move_click(3);"
+				id="idWest">
+		<input type="button"
+				value="Current Score"
+				onclick="btn_score_click();">
+
+		<br>
+
+		<input type="text"
+				id="txtcommand"
+				value="">
+
+		<input type="button"
+				value="Enter"
+				onclick="btn_enter_click();"> 
+
+		<br>
+		<br>
+
+ 		<p>
+      	 <a href="mailto:timothy.doherty1@marist.edu">contact me</a>
+    	 </p>
+		<img src="slide1.jpg"  alt="Map">
+
+	</body>
+</html>
