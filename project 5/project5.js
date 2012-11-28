@@ -1,4 +1,3 @@
-
 var currentlocation = 2  
 
 	//room toggle scores 
@@ -13,7 +12,7 @@ var currentlocation = 2
 	var room8score = 0;
 	var room9score = 0;			
 
-	//Global Array for moving		   N    E   S    W
+					   N    E   S    W
 	var nav = new Array(           /*  0    1   2    3  */  //0 is north, 1 is east, 2 is south, 3 is west,
 	                     /* 0 */     [-1,  -1,  1,  -1],
 	                     /* 1 */     [ 0,  -1,  4,  -1],
@@ -58,7 +57,7 @@ var currentlocation = 2
 
 
 
-	// how the take command works
+
 	
 function take_item() {
 
@@ -90,7 +89,7 @@ function take_item() {
 		}
 
 
-	//location prototype
+	// prototype
 	function proto_location(_id, _name, _description, _item) {
    		this.id      		= _id;
    		this.name     		= _name;
@@ -109,7 +108,7 @@ function take_item() {
 	}
          
 	function creating_locations() {
-  		// create instances under proto_location 
+  		
 
   		location0 = new proto_location("0", "Giant slide", "You are standing next to a giant slide. you see some change at the bottom of the slide", "change");
   		location1 = new proto_location("1", "Huge Tree", "You are standing in front of a large tree. There is a tire swing hanging from it.You also see a dog bone on the ground.", "dog bone");
@@ -135,7 +134,7 @@ function take_item() {
 
 }
 
-//updatetext(room3.description)
+
 
 
 
@@ -306,19 +305,19 @@ function take_item() {
 				btn_move_click(3);          
 			break;  
 
-			//take commant
+		
 			case "Take":
 			case "take":
 				take_item();
 			break;
 
-			//help command
+			
 			case "Help":
 			case "help":
 				help_user();
 			break;
 
-			//inventory checker
+			
 			case "Inventory":
 			case "inventory":
 				inventory_check();
