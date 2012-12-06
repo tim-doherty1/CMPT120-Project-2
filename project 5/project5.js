@@ -58,12 +58,12 @@ var currentlocation = 2
 
 
 
-	
+
 function take_item() {
 
 		item_change 	= new proto_item(0, "change", "it is mostly quarters and dimes.");
 		item_dogbone	= new proto_item(1, "dog bone", "it is a chewed up dog bone.");
-		
+
 
 
 		switch (currentlocation) {
@@ -72,8 +72,8 @@ function take_item() {
 					updatetext ("Your inventory now contains the change.")
 
 					break;
-			
-			
+
+
 			case 1:
 					inventoryArray[1] = item_dogbone
 					updatetext ("Your inventory now contains the dog bone.")
@@ -305,19 +305,19 @@ function take_item() {
 				btn_move_click(3);          
 			break;  
 
-		
+
 			case "Take":
 			case "take":
 				take_item();
 			break;
 
-			
+
 			case "Help":
 			case "help":
 				help_user();
 			break;
 
-			
+
 			case "Inventory":
 			case "inventory":
 				inventory_check();
@@ -326,5 +326,4 @@ function take_item() {
 			default:
          	   updatetext ("Valid commands are \"n\", \"e\", \"s\", \"w\", \"take\", \"help\", and \"inventory\". ");                   
       		}
-      	}			
-		
+      	}	
